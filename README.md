@@ -1,5 +1,5 @@
 # Command-Line-Application
-  - This repository will be for a command line application that will be written primarily in C#
+  - This repository will be for a command line application that will be written primarily in C#.
   - This application needs to consist of the following. 
   -  Ability to take in two inputs and a flag
   - A directory that contains the files that are to be analyzed
