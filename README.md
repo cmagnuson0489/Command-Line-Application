@@ -20,7 +20,7 @@
    # Simplify Deployment and Access
      - Web API: Convert your command line application into a web API. This allows users to interact with your application through HTTP requests without needing to run the code locally.
      - Technologies like ASP.NET Core can help you create a robust API. I will then deploy the API to a cloud platform like Azure, AWS, or Heroku so it can be accessed via the internet.
-     - Containerization: Use Docker to containerize your application. This wraps your application and all its dependencies into a container that can be easily run on any system that has Docker installed.  
+     - Containerization: Use Docker to containerize your application. This will wrap the application and all its dependencies into a container that can be easily run on any system that has Docker installed.  
      - Executable Releases: Build and release executable versions of your application for different operating systems (Windows, MacOS, Linux) on your GitHub releases page. This allows users to download and run your program without compiling the source code. 
   # Enhance Usability and features
     - Interactive CLI: Enhance the command line interface to be more interactive. Use libraries like Spectre.Console or CommandLineParser to improve how inputs are parsed.
