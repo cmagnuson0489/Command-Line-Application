@@ -1,15 +1,14 @@
 using System;
 using System.IO;
 using System.Security.Cryptography;
-using System.Text;
 
 namespace FileAnalyzer
 {
-    class File
+    class Program
     {
         static void Main(string[] args)
         {
-            //if statement to check if the correct number of arguments have been provided
+            //We need to check if the correct number of arguments have been provided
             if (args.Length != 3)
             {
                 Console.WriteLine("Usage: FileAnalyzer <input directory> <output path> <include subdirectories (true/false)>");
@@ -20,7 +19,7 @@ namespace FileAnalyzer
             string outputPath = args[1];
             bool includeSubdirectories = bool.Parse(args[2]);
 
-            //if statement to check if the directory that has been provided actually exists
+            //Checking if the specified input directory exists
 
             if (!Directory.Exists(inputDirectory))
             {
@@ -32,8 +31,8 @@ namespace FileAnalyzer
 
             using StreamWriter writer = new StreamWriter(outputPath);
             writer.WriteLine("File Path,File Type,MD5 Hash");  // CSV header
+            
             //Start processing the file that was givien with the provided directory
-
             ProcessDirectory(inputDirectory, includeSubdirectories, writer);
         }
 
@@ -62,13 +61,13 @@ namespace FileAnalyzer
             fs.Read(signature, 0, signature.Length);
             string fileType = null;
 
-            //if statement to check if the file is a JPG based on the signature.
-
+            //Checking id the file is a JPG based on the signature
             if (signature[0] == 0xFF && signature[1] == 0xD8) fileType = "JPG";
             else if (signature[0] == 0x25 && signature[1] == 0x50 && signature[2] == 0x44 && signature[3] == 0x46) fileType = "PDF";
 
             if (fileType != null)
             {
+                fs.Seek(0, SeekOrigin.Begin)  //Reset the stream position for MD5 calcualtions
                 string md5Hash = CalculateMD5(fs);
                 writer.WriteLine($"\"{filePath}\",{fileType},{md5Hash}");
             }
