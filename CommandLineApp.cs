@@ -4,7 +4,7 @@ using System.Security.Cryptography;
 
 namespace FileAnalyzer
 {
-    class Program
+    class CommandLine
     {
         static void Main(string[] args)
         {
