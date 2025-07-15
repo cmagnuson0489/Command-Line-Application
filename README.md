@@ -10,7 +10,7 @@
   - JPG files start with 0xFFD8.
   - PDF files start with 0x25504446.
   - For each file that is a PDF or a JPG, creates an entry in the output CSV containing the following information
-  - The full path to the file.
+  - The full path to the file being used.
   - The actual file type (PDF or JPG).
   - The MD5 hash of the file contents.
 
